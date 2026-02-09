@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: radial-gradient(circle, #1b1f27, #0b0e13);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* 💌 TARJETA */
+.card {
+  position: relative;
+  width: 620px;
+  height: 420px;
+  color: #ffb6c1;
+}
+
+/* TEXTO */
+.contenido {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  top: 35%;
+}
+
+h1 {
+  color: #ff4d6d;
+  font-size: 30px;
+  margin: 50px;
+}
+
+p {
+  margin: 10px 0 25px;
+  font-size: 18px;
+}
+
+/* 💘 BOTONES */
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  background: #ff1e4d;
+  border: none;
+  padding: 12px 32px;
+  color: white;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
+  background: #ff4d6d;
+  transform: scale(1.08);
+}
+
+/* 💖 BOTÓN SÍ */
+#abrirCarta {
+  box-shadow: 0 0 15px rgba(255, 77, 109, 0.6);
+}
+
+/* 😈 BOTÓN NO */
+#btnNo {
+  background: #555;
+  position: relative;
+}
+
+/* Vibración */
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-3px, 3px); }
+  50% { transform: translate(3px, -3px); }
+  75% { transform: translate(-3px, -3px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* 🌿 MARCO FLORAL */
+.marco {
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  top: 0;
+}
+
+.marco::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(#2ecc71, #27ae60);
+  left: 50%;
+}
+
+.marco::after {
+  content: "🌸 🌿 🌸 🌿 🌸 🌿 🌸";
+  position: absolute;
+  top: 20px;
+  left: -20px;
+  writing-mode: vertical-rl;
+  font-size: 22px;
+}
+
+.left { left: 0; }
+.right {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+/* 💕 CORAZONES */
+.hearts span {
+  position: absolute;
+  bottom: -20px;
+  font-size: 20px;
+  animation: subir 6s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes subir {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* 📜 CARTA */
+.carta {
+  position: absolute;
+  inset: 0;
+  background: #111;
+  border-radius: 15px;
+  padding: 40px;
+  text-align: center;
+  transform: scale(0);
+  transition: .5s;
+  z-index: 5;
+}
+
+.carta h2 {
+  color: #ff4d6d;
+  margin-bottom: 10px;
+}
+
+.carta p {
+  color: #ffd6e0;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.carta.activa {
+  transform: scale(1);
+}
+
+/* 🖼️ IMAGEN SORPRESA */
+#imagenSorpresa {
+  width: 220px;
+  display: none;
+  margin: 15px auto;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 77, 109, 0.6);
+  animation: aparecer 0.6s ease;
+}
+
+@keyframes aparecer {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
